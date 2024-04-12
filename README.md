@@ -6,8 +6,11 @@ AWS (Amazon Web Services) services are particularly valuable in the realm of app
 
 Team members
 
-ag2384, Adish Golechha
-fv121, Fnu Vasureddy
-pk732, Pradhyumna Kanth Goud Kasula
-ssk241, Shreyash Kalal
+Adish Golechha (ag2384)
+
+Fnu Vasureddy (fv121)
+
+Pradhyumna Kanth Goud Kasula (pk732)
+
+Shreyash Kalal (ssk241)
 
