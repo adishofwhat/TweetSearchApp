@@ -1,6 +1,5 @@
 # TweetSearchApp
 
-Author - Shreyash Kalal (ssk241)
 Date - April 27th 2024
 
 To run the code you will need to create an root user account on the AWS Management Console.
