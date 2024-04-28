@@ -9,7 +9,7 @@ class DataCuration:
         self.connection = Connection()
         self.support = Support()
     
-    def stream_data(self):
+    def load_data(self):
     
         lst_tweet_data = []
 
@@ -22,6 +22,32 @@ class DataCuration:
                     continue
 
         return lst_tweet_data
+
+    def stream_data(self):
+    
+        lst_tweet_data = []
+
+        with open("corona-out-3", "r") as f1:
+            for line in f1:
+                try:
+                    data = json.loads(line)
+                    
+                    user_lst = self.get_users([data])
+                    tweet_lst, retweet_lst, quote_lst = self.get_tweets([data])
+                    hashtag_lst = self.get_hashtags([data])
+                    user_mention_lst = self.get_user_mentions([data])
+                    
+                    self.add_users(user_lst)
+                    self.add_tweets(tweet_lst)
+                    self.add_retweets(retweet_lst)
+                    self.add_quotes(quote_lst)
+                    self.add_hashtags(hashtag_lst)
+                    self.add_user_mentions(user_mention_lst)
+                    
+                except:
+                    continue
+
+        return
 
 ## Uncomment the code below to load the 'corona-out-3' file
 #     def stream_data(self):
@@ -823,3 +849,6 @@ data_curaton.add_retweets(retweet_lst)
 data_curaton.add_quotes(quote_lst)
 data_curaton.add_hashtags(hashtag_lst)
 data_curaton.add_user_mentions(user_mention_lst)
+
+##Uncomment the code below to treat the 'corona-out-3' file as a stream and load the data one by one into the data streams
+#data_curation.stream_data()
